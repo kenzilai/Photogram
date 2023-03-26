@@ -1,0 +1,30 @@
+{% extends "config/default.html" %}
+
+{% block title %}Photogram - {{ photo.title }}{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="row vh-100">
+            <div class="d-flex align-items-center justify-content-center col-sm-9 bg-black">
+                <img class="img-fluid w-75" src="{{ photo.image.url }}" />
+            </div>
+            <div class="col-sm-3 px-4">
+                <div class="container d-flex align-items-start px-0 pt-5">
+                    <a href="{% url 'profiles:detail' photo.author.username %}" >
+                        <img src="{{ photo.author.profile.image.url }}" class="rounded-circle" style="float: left; width: 50px; height: auto;" alt="Avatar" />
+                    </a>
+                    <div class="px-3">
+                        <a class="link-light text-decoration-none" href="{% url 'profiles:detail' photo.author.username %}" style="font-size: 20px">{{ photo.author.username }}</a>
+                        <h6 style="color: white;">{{ photo.author.profile.headline }}</h6>
+                    </div>
+                </div>
+                <br>
+                <div class="text-light">
+                    <h5>{{ photo.title }}</h4>
+                    <p>{{ photo.description }}</p>
+                    <p>photoed on {{ photo.date }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
