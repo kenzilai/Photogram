@@ -45,7 +45,7 @@
   <h2 id="Photogram">Photogram</h2>
 </div>
 <div>
-  <h3>Responsive Design</h3>
+  <h3>Responsive Design (This image needs some time to load)</h3>
   <img src="https://github.com/kenzilai/Photogram/blob/main/README%20Assets/Screenshots/Responsive%20Design.gif?raw=true">
   
   <h3>Sign In Pop-up</h3>
