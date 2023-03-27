@@ -24,11 +24,13 @@
   <h2>Overview</h2>
 </div>
 <p>
-  Photogram is a dynamic website project to demostrate my development skills of using Django, Bootstrap, PostgreSQL, AWS EC2, Nginx, Gunicorn and Docker. The purpose of this project is to create a masonry layout photo sharing site. All sensitive keys in settings are masked off using [django-environ](https://django-environ.readthedocs.io/en/latest/index.html) package. All pages are created by [DTL](https://docs.djangoproject.com/en/4.1/ref/templates/language/) and are fully modulized.
+
+  Photogram is a dynamic website project created using Django, Bootstrap, PostgreSQL, AWS EC2, Nginx, Gunicorn and Docker. The purpose of this project is to create a masonry layout photo sharing site. All sensitive keys in settings are masked off using [django-environ](https://django-environ.readthedocs.io/en/latest/index.html) package. All pages are created by [DTL](https://docs.djangoproject.com/en/4.1/ref/templates/language/) and are fully modulized.
 
   This project is following [Class-based views](https://docs.djangoproject.com/en/4.1/topics/class-based-views/), [MTV](https://python.plainenglish.io/the-mvt-design-pattern-of-django-8fd47c61f582) pattern.
 
   > Photogram is a dynamic website and the purpose of this project is to showcase my development skills. It will be costly to deploy the entire project and register a DNS for the project. Therefore, this project won't be deployed online.
+
 </p>
 
 <div align="center">
