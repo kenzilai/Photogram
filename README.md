@@ -1,6 +1,6 @@
 <div id="readme-top" align="center">
   <h2>Photogram</h2>
-  <p>Photogram is a Python Stack, Django based masonry layout photo posting site.</p>
+  <p>Photogram is a Python Stack, Django based masonry layout photo sharing site.</p>
 </div>
 <img src="https://raw.githubusercontent.com/kenzilai/Photogram/main/README%20Assets/Screenshots/Home%20Page.jpg" alt="Photogram">
 
