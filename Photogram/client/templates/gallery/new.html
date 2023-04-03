@@ -3,8 +3,8 @@
 {% block title %}Upload a new photo{% endblock title %}
 
 {% block body %}
-<div class="d-flex flex-column min-vh-100 align-items-center" style="color: white">
-    <div class="container bg-dark" data-bs-theme="dark">
+<div class="d-flex min-vh-100 justify-content-center align-items-center" style="color: white">
+    <div class="card bg-dark" data-bs-theme="dark">
         <form method="POST" action="" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.as_p }}

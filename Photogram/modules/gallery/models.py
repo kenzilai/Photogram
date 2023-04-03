@@ -7,7 +7,7 @@ class Photo(models.Model):
                                 on_delete = models.CASCADE,
                             )
     title = models.CharField(max_length=80, blank=False, null=False)
-    image = models.ImageField(upload_to='media/images/')
+    image = models.ImageField(upload_to='media/images/',blank=False )
     description = models.TextField(max_length=255, blank=True, null=False)
     date = models.DateTimeField(auto_now=True)
 

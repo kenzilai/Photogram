@@ -15,28 +15,28 @@
                     <form class="text-light" method="POST" action="{% url 'account_login' %}">
                         {% csrf_token %}
                         {% if redirect_field_value %}
-                            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+                            <input class="form-control shadow-none bg-dark-subtle" type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
                         {% endif %}
-                        <p class="form-text error-text">
+                        <p class="text-danger">
                             {{ form.non_field_errors.as_text }}
                         </p>
                         <div>
                             <label for="email" class="form-label">Email Address</label>
-                            <input type="email" class="form-control shadow-none" id="email" aria-describedby="emailHelp" placeholder="email@example.com" name="login">
-                            <p id="emailHelp" class="form-text error-text">
+                            <input type="email" class="form-control shadow-none bg-dark-subtle" id="email" aria-describedby="emailHelp" placeholder="Email Address" name="login">
+                            <p id="emailHelp" class="text-danger">
                                 {{ form.login.errors.as_text }}
                             </p>
                         </div>
                         <div>
                             <label for="id_password" class="form-label">Password</label>
-                            <input type="password" class="form-control shadow-none" id="id_password" aria-describedby="passwordHelp" placeholder="password" name="password">
-                            <p id="passwordHelp" class="form-text error-text">
+                            <input type="password" class="form-control shadow-none bg-dark-subtle" id="id_password" aria-describedby="passwordHelp" placeholder="Password" name="password">
+                            <p id="passwordHelp" class="text-danger">
                                 {{ form.password.errors.as_text }}
                             </p>
                         </div>
                         <div class="mb-2">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="remember" id="id_remember">
+                                <input class="form-check-input bg-dark-subtle" type="checkbox" name="remember" id="id_remember">
                                 <label class="form-check-label remember-text" for="id_remember">
                                     Remember me
                                 </label>

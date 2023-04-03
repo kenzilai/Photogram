@@ -20,6 +20,21 @@ class PhotoDetailView(DetailView):
     context_object_name = "photo"
 
 class NewPhoto(LoginRequiredMixin, CreateView):
-    model = Photo
     template_name = "gallery/new.html"
+    model = Photo
+    success_url = "/"
     fields = ["title", "image", "description"]
+
+    def form_valid(self, form):
+        """If the form is valid, redirect to the supplied URL."""
+        
+        def dispatch(self, request, *args, **kwargs):
+            self.request = request
+            return super().dispatch(request, *args, **kwargs)
+        
+        
+        obj = form.save(commit=False)
+        obj.author = self.request.user
+        obj.save()
+
+        return super().form_valid(form)
