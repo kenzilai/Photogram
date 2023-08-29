@@ -1,0 +1,171 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark" data-bs-theme="dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">Photogram</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll ms-3 gap-3" style="--bs-scroll-height: 100px;">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Explore</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Jobs</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+            </li>
+        </ul> -->
+        <div class="collapse navbar-collapse mx-3" id="navbarScroll">
+            <div class="input-group rounded">
+                <input type="search" id="form1" class="form-control rounded bg-dark-subtle" placeholder="Search" aria-label="Search" aria-describedby="search-addon" style="color:white;" />
+            </div>
+        </div>
+        {% if request.user.is_authenticated %}
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll gap-3" style="--bs-scroll-height: 100px;">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'gallery:new' %}">Upload</a>
+                <!-- </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Notifications</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Messages</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Cart</a>
+                </li> -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="Left-aligned, right-aligned lg">
+                        <img src="{{ user.profile.image.url }}" class="rounded-circle" width="30" height="30" alt="{{ user.username }}" />
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li class="ps-3">
+                            <a class="link-light text-decoration-none fw-bolder" href="{% url 'profiles:detail' user.username %}">{{ user.username }}</a>
+                        <li><a class="dropdown-item" href="{% url 'profiles:detail' user.username %}">View Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        {% else %}
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll gap-3" style="--bs-scroll-height: 100px;">
+                <li class="nav-item">
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="#">Cart</a>
+                    </li> -->
+                    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#signup-modal">
+                        <li class="nav-item"><a class="text-white text-decoration-none" >Sign Up</a></li>
+                    </button>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#login-modal">
+                        <li class="nav-item"><a class="text-white text-decoration-none" >Sign In</a></li>
+                    </button>
+                </li>
+            </ul>
+        {% endif %}
+        <!-- href="{% url 'account_signup' %}" -->
+        <!-- href="{% url 'account_login' %}" -->
+    </div>
+</nav>
+
+<!-- Sign Up Modal -->
+<div class="modal fade" id="signup-modal" tabindex="-1" aria-labelledby="signup-modal-title" aria-hidden="false">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark" data-bs-theme="dark">
+            <div class="modal-header" style="border-bottom: 0 none;">
+                <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h1 class="modal-title fs-5 mb-3 text-center" id="signup-modal-title">Photogram</h1>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <a href="{% url 'account_signup' %}" class="btn fa fa-envelope text-white" type="button" style="background: #7F7F7F; color: white;"> Sign up with Email</a>
+                    <a href="#" class="btn fa fa-google" type="button" style="background: #dd4b39; color: white;"> Sign up with Google</a>
+                    <a href="#" class="btn fa fa-facebook" type="button" style="background: #3B5998; color: white;"> Sign up with Facebook</a>
+                </div>
+            </div>
+            <div class="modal-footer" style="border-top: 0 none; background-color:#16161a;">
+                <div class="d-grid mx-auto">
+                    <p class="m-0" style="color:white">Already have an account? <a href="{% url 'account_login' %}" style="text-decoration: none;">Sign In here</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Sign In Modal -->
+<div class="modal fade" id="login-modal" tabindex="-1" aria-labelledby="login-modal-title" aria-hidden="false">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark" data-bs-theme="dark">
+            <div class="modal-header" style="border-bottom: 0 none;">
+                <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="text-light" method="POST" action="{% url 'account_login' %}">
+                    {% csrf_token %}
+                    {% if redirect_field_value %}
+                        <input class="form-control shadow-none bg-dark-subtle" type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+                    {% endif %}
+                    <div class="mb-3 row justify-content-center">
+                        <div class="col-sm-10">
+                            <h1 class="modal-title fs-5" id="login-modal-title">Sign In</h1>
+                        </div>
+                    </div>
+                    <p class="text-danger">
+                        {{ form.non_field_errors.as_text }}
+                    </p>
+                    <div class="mb-3 row justify-content-center">
+                        <div class="col-sm-10">
+                            <label for="email" class="col-form-label">Email Address</label>
+                            <input type="email" class="form-control shadow-none bg-dark-subtle" id="email_modal" aria-describedby="emailHelp" placeholder="Email Address" name="login">
+                            <p id="email_Modal" class="text-danger">
+                                {{ form.login.errors.as_text }}
+                            </p>
+
+                            <label for="inputPassword" class="col-form-label" >Password</label>
+                            <input type="password" class="form-control shadow-none bg-dark-subtle" id="password_modal" aria-describedby="passwordHelp" placeholder="Password" name="password">
+                            <p id="password_Modal" class="text-danger">
+                                {{ form.password.errors.as_text }}
+                            </p>
+
+                            <div class="form-check mb-2">
+                                <input class="form-check-input bg-dark-subtle" type="checkbox" name="remember" id="id_remember_password_modal">
+                                <label class="form-check-label remember-text" for="id_remember_password_modal">
+                                    Remember me
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm-10">
+                            <button class="btn btn-primary mt-3 w-100" type="submit">Sign in</button>
+                        </div>
+                    </div>
+                </form>
+                <div class="mb-3 row justify-content-around">
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-3">
+                        <a href="#" class="btn fa fa-google" type="button" style="background: #dd4b39; color: white;"> Sign in with Google</a>
+                        <a href="#" class="btn fa fa-facebook" type="button" style="background: #3B5998; color: white;"> Sign in with Facebook</a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer" style="border-top: 0 none; background-color:#16161a;">
+                <div class="d-grid mx-auto">
+                    <p class="m-0" style="color:white">Not a member yet? <a href="{% url 'account_signup' %}" style="text-decoration: none;">Sign Up here</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+{% extends "config/default.html" %}
+
+{% block title %}Upload a new photo{% endblock title %}
+
+{% block body %}
+<div class="d-flex min-vh-100 justify-content-center align-items-center" style="color: white">
+    <div class="card bg-dark" data-bs-theme="dark">
+        <form method="POST" action="" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+</div>
+{% endblock body %}

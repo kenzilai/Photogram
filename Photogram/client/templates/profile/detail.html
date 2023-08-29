@@ -1,0 +1,17 @@
+{% extends 'config/default.html' %}
+
+{% block title %}Photogram - {{ user.username }}{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="row p-0" data-masonry='{"percentPosition": true }'>
+            {% for photo in photos %}
+            <div class="col-sm-6 col-lg-4 p-0 w-25">
+                <a href="{% url 'gallery:album' photo.author.id %}">
+                    <img src="{{ photo.author.image.url }}" alt="{{ photo.title }}" class="img-fluid" loading="lazy" />
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
