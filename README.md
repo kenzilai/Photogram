@@ -1,4 +1,4 @@
-<h2 id="readme-top" align="center">Overview</h2>
+<h2 id="readme-top" align="center">Photogram</h2>
 
 <div align="center">
   <h3>Technologies & Tools</h3>
@@ -32,12 +32,9 @@
   </ul>
 </div>
 
-<div align="center">
-  <h2 id="Photogram">Photogram</h2>
-</div>
 <div>
   <h3>Home Page</h3>
-  <img src="https://github.com/kenzilai/Photogram/blob/main/README%20Assets/Screenshots/Home%20Page.jpg">
+  <img src="https://raw.githubusercontent.com/kenzilai/Photogram/main/README%20Assets/Screenshots/Home%20Page.jpg">
   
   <h3>Sign In Pop-up</h3>
   <img src="https://raw.githubusercontent.com/kenzilai/Photogram/main/README%20Assets/Screenshots/Sign%20In%20pop-up.jpg">
@@ -73,12 +70,5 @@
   <h3>Users</h3>
   <img src="https://raw.githubusercontent.com/kenzilai/Photogram/main/README%20Assets/Screenshots/Users.jpg">
 </div>
-
-<div align="center">
-  <h2>Contact</h2>
-</div>
-
-- [Linkedin](https://www.linkedin.com/in/kenzi-lai)
-- Email: kenzi.lai.klai@gmail.com
 
 <p align="right"><a href="#readme-top">back to top &uarr;</a></p>
